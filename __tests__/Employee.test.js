@@ -5,7 +5,7 @@ const employee = new Employee('devon', '007007', 'dg@gmail.com')
 test('test to see if the constructor values populated for employee object', () => {
     expect(employee.name).toBe('devon')
     expect(employee.id).toBe('007007')
-    expect(employee.name).toBe('dg@gmail.com')
+    expect(employee.email).toBe('dg@gmail.com')
 })
 
 test('test to see if we can pull name from getName() method', () => {
