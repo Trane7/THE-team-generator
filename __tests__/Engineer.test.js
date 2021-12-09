@@ -10,20 +10,20 @@ test('test to see if the constructor values populated for employee object', () =
 })
 
 test('test to see if we can pull name from getName() method', () => {
-    expect(engineer.getName().toBe('devon'))
+    expect(engineer.getName()).toBe('devon')
 })
 
 test('test to see if we can pull name from getId() method', () => {
-    expect(engineer.getId().toBe('007007'))
+    expect(engineer.getId()).toBe('007007')
 })
 
 test('test to see if we can pull name from getEmail() method', () => {
-    expect(engineer.getEmail().toBe('dg@gmail.com'))
+    expect(engineer.getEmail()).toBe('dg@gmail.com')
 })
 
 test('test to see if we can pull name from getRole() method', () => {
-    expect(engineer.getRole().toBe('Engineer'))
+    expect(engineer.getRole()).toBe('Engineer')
 })
 test('test to see if we can pull name from getOfficeNumber() method', () => {
-    expect(engineer.getGithub().toBe('Trane7'))
+    expect(engineer.getGithub()).toBe('Trane7')
 })
