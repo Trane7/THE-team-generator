@@ -1,17 +1,13 @@
+const inquirer = require("inquirer")
 const Manager = require('./lib/Manager')
 const Intern = require('./lib/Intern')
 const Engineer = require('./lib/Engineer')
-const inquirer = require("inquirer")
 const path = require("path")
 const fs = require("fs")
 
 const OUTPUT_DIR = path.resolve(__dirname, "output")
-const outputPath = path.join(OUTPUT_DIR, "team.html")
-
-const render = require("./lib/htmlRenderer")
-
-
-const team = []
+const outputPath = path.join(OUTPUT_DIR, "roster.html")
+const roster = []
 
 
 const promptManager = () => {
@@ -72,7 +68,7 @@ const promptManager = () => {
     .then(answers => {
         console.log(answers)
         const manager = new Manager(answers.name, answers.employeeId, answers.email, answers.officeNumber)
-        team.push(manager)
+        roster.push(manager)
         promptMain()
     })
 }
@@ -83,7 +79,7 @@ const promptMain = () => {
             type: 'list',
             name: 'main',
             message: 'Please choose from the following actions:',
-            choices: ('add an intern', 'add an engineer', 'done')
+            choices: ['Add an intern', 'Add an engineer', 'Done']
 
         }
     ])
@@ -165,7 +161,7 @@ const promptIntern = () => {
     .then(answers => {
         console.log(answers)
         const intern = new Intern(answers.name, answers.employeeId, answers.email, answers.school)
-        team.push(intern)
+        roster.push(intern)
         promptMain()
     })
 }
@@ -234,8 +230,8 @@ const promptEngineer = () => {
     ])
     .then(answers => {
         console.log(answers)
-        const engineer = new Intern(answers.name, answers.employeeId, answers.email, answers.githubUN)
-        team.push(engineer)
+        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.githubUN)
+        roster.push(engineer)
         promptMain()
     })
 }
@@ -251,7 +247,7 @@ const buildRoster = () => {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
     }
-    fs.writeFileSync(outputPath, generateSite(teamRoster), "utf-8")
+    fs.writeFileSync(outputPath, generatePage(teamRoster), "utf-8")
 }
 
 promptManager()
