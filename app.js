@@ -2,11 +2,11 @@ const inquirer = require("inquirer")
 const Manager = require('./lib/Manager')
 const Intern = require('./lib/Intern')
 const Engineer = require('./lib/Engineer')
-const generatePage = require('./src/generate-page')
+const generateRoster = require('./src/generate-page')
 const path = require("path")
 const fs = require("fs")
 
-const OUTPUT_DIR = path.resolve(__dirname, "output")
+const OUTPUT_DIR = path.resolve(__dirname, "output.html")
 const outputPath = path.join(OUTPUT_DIR, )
 const roster = []
 
@@ -86,14 +86,15 @@ const promptMain = () => {
     ])
     .then(userChoice => {
         switch (userChoice.main) {
-            case "add an intern":
+            case "Add an intern":
+                console.log('Add Intern');
                 promptIntern()
                 break
-            case "add an engineer":
+            case "Add an engineer":
                 promptEngineer()
                 break
             default:
-                buildRoster()        
+                buildRoster(roster)        
         }
     })
 }
@@ -248,7 +249,7 @@ const buildRoster = () => {
     if (!fs.existsSync(OUTPUT_DIR)) {
         fs.mkdirSync(OUTPUT_DIR)
     }
-    fs.writeFileSync(outputPath, generatePage(teamRoster), "utf-8")
+    fs.writeFileSync(outputPath, generateRoster(roster), "utf-8")
 }
 
 promptManager()
