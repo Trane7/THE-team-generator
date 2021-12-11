@@ -6,7 +6,7 @@ test('test to see if the constructor values populated for employee object', () =
     expect(engineer.name).toBe('devon')
     expect(engineer.id).toBe('007007')
     expect(engineer.email).toBe('dg@gmail.com')
-    expect(engineer.githubUserName).toBe('Trane7')
+    expect(engineer.github).toBe('Trane7')
 })
 
 test('test to see if we can pull name from getName() method', () => {

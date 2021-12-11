@@ -218,10 +218,10 @@ const promptEngineer = () => {
         },
         {
             type: 'input',
-            name: 'githubUN',
+            name: 'github',
             message: 'Name of engineers github username? (Required):',
-            validate: githubUN => {
-                if (githubUN) {
+            validate: github => {
+                if (github) {
                     return true
                 } else {
                     console.log('Please enter engineers github username to proceed!')
@@ -232,7 +232,7 @@ const promptEngineer = () => {
     ])
     .then(answers => {
         console.log(answers)
-        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.githubUN)
+        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.github)
         roster.push(engineer)
         promptMain()
     })
