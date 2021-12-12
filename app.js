@@ -16,7 +16,7 @@ const promptManager = () => {
         {
             type: 'input',
             name: 'name',
-            message: 'Enter you name here (Required):',
+            message: 'Enter your name here (Required):',
             validate: nameInput => {
                 if(nameInput) {
                     return(true)
