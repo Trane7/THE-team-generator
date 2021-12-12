@@ -5,7 +5,7 @@ This program is designed to help a manager quickly input their employees informa
 
 
 ## Screenshots
-HTML File Sample: 
+HTML File Sample: Please look at the 'sample' file for HTML sample 
 
 
 
