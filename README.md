@@ -5,7 +5,10 @@ This program is designed to help a manager quickly input their employees informa
 
 
 ## Screenshots
-HTML File Sample: Please look at the 'sample' file for HTML sample 
+HTML File Sample: Please look at the 'sample' file for HTML sample.
+
+Screenshot: ![team generating](https://user-images.githubusercontent.com/89409597/145729752-c920bcbd-f235-4be5-adac-b6b6412ef87f.png)
+
 
 
 
