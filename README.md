@@ -16,5 +16,5 @@ Screenshot: ![team generating](https://user-images.githubusercontent.com/8940959
 ### Links
 GitHub Repository: https://github.com/Trane7/THE-team-generator
 
-Video Link:
+Video Link: https://watch.screencastify.com/v/BExBV2cxW6W4itf9eygr
 
